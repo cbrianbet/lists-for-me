@@ -14,7 +14,7 @@ export default function HomePage() {
       supabase.auth.getSession().then(({ data }) => {
         if (data.session) {
           setIsRedirecting(true);
-          router.push("/recipes");
+          router.push("/dashboard");
         }
       }).catch(() => {
         // Ignore errors - just show landing page
@@ -41,12 +41,12 @@ export default function HomePage() {
             <span className="text-xl font-bold">Recipes & Lists</span>
           </div>
           <div className="flex items-center gap-2">
-            <Link href="/login" className="px-4 py-2 text-sm hover:underline">
+            <Link href="/login" className="min-h-[44px] min-w-[44px] flex items-center px-4 py-2 text-sm hover:underline">
               Login
             </Link>
             <Link 
               href="/login" 
-              className="rounded-md bg-primary px-4 py-2 text-sm text-primary-foreground hover:bg-primary/90"
+              className="min-h-[44px] flex items-center rounded-md bg-primary px-4 py-2 text-sm text-primary-foreground hover:bg-primary/90"
             >
               Get Started
             </Link>
@@ -68,7 +68,7 @@ export default function HomePage() {
           <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
             <Link 
               href="/login" 
-              className="rounded-md bg-primary px-6 py-3 text-lg text-primary-foreground hover:bg-primary/90"
+              className="min-h-[48px] flex items-center justify-center rounded-md bg-primary px-6 py-3 text-lg text-primary-foreground hover:bg-primary/90"
             >
               Get Started Free
             </Link>

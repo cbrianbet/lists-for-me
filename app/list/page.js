@@ -161,7 +161,7 @@ export default function ListsPage() {
   return (
     <main className="container mx-auto max-w-4xl px-4 py-6">
       <div className="mx-auto max-w-2xl space-y-6">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <h1 className="text-2xl font-bold">Lists</h1>
             <p className="text-sm text-muted-foreground">
@@ -225,16 +225,16 @@ export default function ListsPage() {
                   <p className="text-xs text-muted-foreground">Optional, between 1900 and 2100.</p>
                 </div>
 
-                <div className="flex items-center gap-3">
+                <div className="flex flex-col sm:flex-row items-stretch gap-3">
                   <button
                     type="button"
                     onClick={() => setNewEncrypted(false)}
-                    className={`flex flex-1 items-center gap-2 rounded-lg border p-3 transition-colors ${
+                    className={`flex flex-1 items-center gap-2 rounded-lg border p-3 transition-colors min-h-[52px] ${
                       newEncrypted ? "border-border hover:bg-muted/50" : "border-primary bg-primary/5"
                     }`}
                   >
-                    <Globe className="h-5 w-5" />
-                    <div className="text-left">
+                    <Globe className="h-5 w-5 shrink-0" />
+                    <div className="text-left min-w-0">
                       <div className="font-medium">Public</div>
                       <div className="text-xs text-muted-foreground">Anyone with the link can view</div>
                     </div>
@@ -242,12 +242,12 @@ export default function ListsPage() {
                   <button
                     type="button"
                     onClick={() => setNewEncrypted(true)}
-                    className={`flex flex-1 items-center gap-2 rounded-lg border p-3 transition-colors ${
+                    className={`flex flex-1 items-center gap-2 rounded-lg border p-3 transition-colors min-h-[52px] ${
                       newEncrypted ? "border-primary bg-primary/5" : "border-border hover:bg-muted/50"
                     }`}
                   >
-                    <Lock className="h-5 w-5" />
-                    <div className="text-left">
+                    <Lock className="h-5 w-5 shrink-0" />
+                    <div className="text-left min-w-0">
                       <div className="font-medium">Encrypted</div>
                       <div className="text-xs text-muted-foreground">Passphrase required to view or edit</div>
                     </div>

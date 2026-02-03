@@ -186,10 +186,10 @@ export default function DashboardPage() {
               ) : (
                 <div className="space-y-3">
                   {metrics.topCategories.map((cat) => (
-                    <div key={cat.name} className="flex items-center justify-between">
-                      <span className="capitalize text-sm font-medium">{cat.name}</span>
-                      <div className="flex items-center gap-3">
-                        <div className="h-2 w-32 overflow-hidden rounded-full bg-muted">
+                    <div key={cat.name} className="flex items-center justify-between gap-2">
+                      <span className="capitalize text-sm font-medium shrink-0">{cat.name}</span>
+                      <div className="flex items-center gap-2 min-w-0 flex-1">
+                        <div className="h-2 flex-1 min-w-0 overflow-hidden rounded-full bg-muted">
                           <div
                             className="h-full bg-primary"
                             style={{
@@ -197,7 +197,7 @@ export default function DashboardPage() {
                             }}
                           />
                         </div>
-                        <span className="text-sm text-muted-foreground w-8 text-right">{cat.count}</span>
+                        <span className="text-sm text-muted-foreground w-8 shrink-0 text-right">{cat.count}</span>
                       </div>
                     </div>
                   ))}

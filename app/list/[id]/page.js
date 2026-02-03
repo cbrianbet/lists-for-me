@@ -516,17 +516,17 @@ export default function ListDetailPage() {
 
         <Card>
           <CardHeader>
-            <div className="flex items-center justify-between gap-4">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
               <div className="flex items-center gap-2">
-                {isEncrypted && <Lock className="h-5 w-5 text-primary" />}
-                <div>
+                {isEncrypted && <Lock className="h-5 w-5 text-primary shrink-0" />}
+                <div className="min-w-0">
                   <CardTitle>{list.name}</CardTitle>
                   <CardDescription>
                     {isEncrypted ? "Encrypted • Contents secured with your passphrase" : "Public list"}
                   </CardDescription>
                 </div>
               </div>
-              <div className="w-full max-w-[220px] space-y-1 text-right text-xs text-muted-foreground">
+              <div className="shrink-0 space-y-1 text-xs text-muted-foreground sm:text-right">
                 {list.created_at && (
                   <div>Created: {new Date(list.created_at).toLocaleDateString()}</div>
                 )}
@@ -642,7 +642,7 @@ export default function ListDetailPage() {
             </div>
 
             <div className="space-y-2 border-t pt-4">
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-col sm:flex-row gap-2">
                 <Input
                   value={text}
                   onChange={(e) => {
@@ -651,7 +651,7 @@ export default function ListDetailPage() {
                   }}
                   placeholder="Add item..."
                   onKeyDown={(e) => e.key === "Enter" && saveItem()}
-                  className="flex-1 min-w-[140px]"
+                  className="flex-1 min-w-0"
                   maxLength={200}
                 />
                 <Input
@@ -661,7 +661,7 @@ export default function ListDetailPage() {
                   value={itemYear}
                   onChange={(e) => setItemYear(e.target.value)}
                   placeholder="Year (opt)"
-                  className="w-24"
+                  className="w-full sm:w-24 shrink-0"
                 />
               </div>
               <Textarea
@@ -715,11 +715,11 @@ export default function ListDetailPage() {
                             </div>
                           )}
                         </div>
-                        <div className="flex gap-2">
+                        <div className="flex gap-2 shrink-0">
                           <Button
                             variant="ghost"
                             size="icon"
-                            className="h-8 w-8"
+                            className="h-9 w-9 min-h-[44px] min-w-[44px]"
                             onClick={() => {
                               setEditId(it.id);
                               setText(it.name);
@@ -734,7 +734,7 @@ export default function ListDetailPage() {
                           <Button
                             variant="ghost"
                             size="icon"
-                            className="h-8 w-8 text-destructive hover:text-destructive"
+                            className="h-9 w-9 min-h-[44px] min-w-[44px] text-destructive hover:text-destructive"
                             onClick={() => deleteItem(it.id)}
                             aria-label="Delete item"
                           >

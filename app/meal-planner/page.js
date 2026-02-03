@@ -291,15 +291,16 @@ export default function MealPlannerPage() {
             {plans.map((p) => (
               <li
                 key={p.id}
-                className="flex flex-wrap items-center justify-between gap-2 rounded-lg border bg-card px-3 py-2"
+                className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 rounded-lg border bg-card px-3 py-2"
               >
-                <span className="text-sm">
+                <span className="text-sm min-w-0 break-words">
                   {p.planned_date} → {p.recipe_title}
                 </span>
                 <Button
                   variant="outline"
                   size="sm"
                   onClick={() => addToCalendar(p.recipe_id, p.planned_date)}
+                  className="shrink-0"
                 >
                   <CalendarIcon className="mr-2 h-4 w-4" />
                   Add to Calendar

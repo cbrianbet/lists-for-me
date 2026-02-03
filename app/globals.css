@@ -119,9 +119,29 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
   body {
     @apply bg-background text-foreground;
+    min-height: 100dvh;
+    min-height: 100vh;
+    padding-bottom: env(safe-area-inset-bottom, 0);
+    padding-left: env(safe-area-inset-left, 0);
+    padding-right: env(safe-area-inset-right, 0);
   }
+  /* Improve touch targets on mobile */
+  @media (pointer: coarse) {
+    button, a, [role="button"], input, select, textarea {
+      touch-action: manipulation;
+    }
+  }
+}
+
+/* Safe area for notched devices */
+.safe-area-inset-top {
+  padding-top: env(safe-area-inset-top, 0);
 }
 
 /* React Calendar theme integration */

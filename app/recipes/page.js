@@ -382,7 +382,7 @@ export default function RecipesPage() {
             <CardDescription>Paste a recipe link to extract title, ingredients, and steps</CardDescription>
           </CardHeader>
           <CardContent className="space-y-2">
-            <div className="flex gap-2">
+            <div className="flex flex-col sm:flex-row gap-2">
               <Input
                 placeholder="https://example.com/recipe"
                 value={importUrl}
@@ -391,8 +391,9 @@ export default function RecipesPage() {
                   setImportError("");
                 }}
                 onKeyDown={(e) => e.key === "Enter" && importFromUrl()}
+                className="flex-1 min-w-0"
               />
-              <Button onClick={importFromUrl} disabled={importing || !importUrl.trim()}>
+              <Button onClick={importFromUrl} disabled={importing || !importUrl.trim()} className="shrink-0">
                 {importing ? "Extracting..." : (
                   <>
                     <Link2 className="mr-2 h-4 w-4" />
