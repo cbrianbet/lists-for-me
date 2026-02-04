@@ -4,8 +4,8 @@ import Navbar from "../components/Navbar";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata = {
-  title: "Recipes & Lists",
-  description: "Offline-first recipes, lists and meal planner",
+  title: "Kitchen Sync",
+  description: "Recipes, lists & meal plans — in sync. Offline-first, private by default.",
 };
 
 export const viewport = {

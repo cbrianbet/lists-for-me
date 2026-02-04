@@ -1,6 +1,6 @@
 {
-	"name": "Recipes & Lists",
-	"short_name": "MealApp",
+	"name": "Kitchen Sync",
+	"short_name": "Kitchen Sync",
 	"start_url": "/",
 	"display": "standalone",
 	"theme_color": "#3b82f6",
